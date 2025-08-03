@@ -126,12 +126,68 @@
       color: #90949c;
     }
 
-    @media (max-width: 400px) {
-      .container {
-        width: 90%;
-        padding: 20px;
-      }
+    /* Popup Styles */
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
     }
+
+    .popup-content {
+      background: #fff;
+      width: 320px;
+      border-radius: 12px;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .popup-header {
+      background: #1877f2;
+      color: white;
+      padding: 10px;
+      border-radius: 12px 12px 0 0;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .login-btn {
+      background: #1877f2;
+      color: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .login-btn:hover {
+      background: #165dd1;
+    }
+
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
   </style>
 </head>
 <body>
@@ -144,11 +200,35 @@
       Grow your social presence with Meta Verified – a new subscription bundle available 
       for creators and businesses on Instagram and Facebook.
     </p>
-    <button class="btn">Apply</button>
+    <button class="btn" onclick="openPopup()">Apply</button>
     <a href="#">More verified for businesses</a>
     <div class="footer">
       Features, availability, and pricing may vary by region.
     </div>
   </div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <div class="popup-header">
+        Login with Facebook
+        <span class="close" onclick="closePopup()">×</span>
+      </div>
+      <div style="padding: 15px;">
+        <input type="text" placeholder="Email or Phone">
+        <input type="password" placeholder="Password">
+        <button class="login-btn">Log In</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
