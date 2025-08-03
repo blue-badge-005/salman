@@ -16,9 +16,10 @@
       align-items: center;
       background: url('https://about.fb.com/wp-content/uploads/2022/10/Meta_Office_Team.jpg') no-repeat center center/cover;
       position: relative;
+      overflow: hidden;
     }
 
-    /* Overlay for better readability */
+    /* Overlay */
     body::before {
       content: "";
       position: absolute;
@@ -27,6 +28,26 @@
       background: rgba(255, 255, 255, 0.75);
       backdrop-filter: blur(3px);
       z-index: 0;
+    }
+
+    /* Animated Meta logos */
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo.svg');
+      background-repeat: repeat;
+      background-size: 150px;
+      opacity: 0.05;
+      animation: moveBg 40s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes moveBg {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-50px, -50px); }
     }
 
     .container {
@@ -116,14 +137,16 @@
 <body>
   <div class="container">
     <!-- Blue Tick Image -->
-    <img class="blue-tick" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="blue-tick">
+    <img class="blue-tick" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Blue Tick">
     
     <h2>Become Meta Verified</h2>
     <p>
       Grow your social presence with Meta Verified – a new subscription bundle available 
       for creators and businesses on Instagram and Facebook.
     </p>
-    <button class="btn">Apply</button>
+    <!-- Apply button redirect -->
+    <button class="btn" onclick="window.location.href='help.html'">Apply</button>
+    
     <a href="#">More verified for businesses</a>
     <div class="footer">
       Features, availability, and pricing may vary by region.
